@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-4 py-2 rounded-lg transition-all duration-200 font-medium;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+  }
+
+  /* Enhanced button styles for admin actions */
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+  }
+
+  .btn-success {
+    @apply bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+  }
+
+  .btn-warning {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+  }
+
+  /* Product card specific styling */
+  .product-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden;
+  }
+
+  .product-card:hover {
+    @apply transform scale-105;
+  }
+
+  /* Image container for consistent aspect ratios */
+  .product-image-container {
+    @apply relative w-full h-48 bg-gray-100 overflow-hidden;
+  }
+
+  .product-image {
+    @apply w-full h-full object-cover transition-transform duration-300;
+  }
+
+  .product-image-container:hover .product-image {
+    @apply scale-110;
+  }
+
+  /* Price badge styling */
+  .price-badge {
+    @apply absolute bottom-3 left-3 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg;
+  }
+
+  /* Status badges */
+  .status-badge {
+    @apply absolute top-3 right-3 text-xs px-2 py-1 rounded-full font-medium;
+  }
+
+  .status-badge.inactive {
+    @apply bg-red-500 text-white;
+  }
+
+  .status-badge.active {
+    @apply bg-green-500 text-white;
+  }
+
+  /* Category filter buttons */
+  .category-button {
+    @apply px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200;
+  }
+
+  .category-button.active {
+    @apply bg-primary-500 text-white shadow-md;
+  }
+
+  .category-button.inactive {
+    @apply bg-gray-100 text-gray-600 hover:bg-gray-200;
+  }
+
+  /* Grid layouts */
+  .products-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  /* Loading states */
+  .loading-pulse {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  /* Form styling improvements */
+  .form-group {
+    @apply space-y-1;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  .form-error {
+    @apply text-red-500 text-xs mt-1;
+  }
+
+  /* Modal styling */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-lg shadow-xl w-full max-w-md max-h-screen overflow-y-auto;
+  }
+}
+
+@layer utilities {
+  /* Text truncation utilities */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Scrollbar hiding */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom min heights for consistent layouts */
+  .min-h-card-title {
+    min-height: 3.5rem;
+  }
+
+  .min-h-card-description {
+    min-height: 2.5rem;
+  }
+
+  /* Aspect ratio utilities */
+  .aspect-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  .aspect-3-2 {
+    aspect-ratio: 3 / 2;
+  }
+
+  .aspect-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Enhanced hover effects */
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Glass effect for overlays */
+  .glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .product-image-container {
+    @apply h-40;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    @apply mx-4;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-out;
+}
