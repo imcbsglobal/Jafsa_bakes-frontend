@@ -1,9 +1,9 @@
 import React from "react";
-import { FaInstagram, FaFacebook, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import {FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 mt-10">
+    <footer className="bg-gray-900 text-gray-300 py-8 pb-20 mt-10">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         
         {/* Left side: Address & Contact */}
@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Center: Social Icons */}
+        {/* Center: Social Icons
         <div className="flex space-x-6 mb-6 md:mb-0">
           <a
             href="https://www.instagram.com/jafsa_bakes?igsh=ZTZ3bXJ2Y3Q0MHVv"
@@ -39,7 +39,7 @@ const Footer = () => {
           >
             <FaFacebook />
           </a>
-        </div>
+        </div> */}
 
         {/* Right side: Powered by */}
         <div>

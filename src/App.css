@@ -58,3 +58,8 @@
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background-color: #eab308; /* Tailwind yellow-500 */
 }
+
+/* Banner styles */
+.fixed-banner {
+  background: linear-gradient(to right, #facc15, #eab308);
+}

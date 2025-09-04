@@ -5,6 +5,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import { categoriesAPI, productsAPI } from '../services/api';
 import toast from 'react-hot-toast';
 import logo from "../assets/logo-js.png";
+import Banner from "../components/Banner";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -339,6 +340,7 @@ const Home = () => {
           </>
         )}
       </div>
+      <Banner />
     </div>
   );
 };
